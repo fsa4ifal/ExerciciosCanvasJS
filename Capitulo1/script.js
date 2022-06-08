@@ -65,22 +65,15 @@ function createCanvas() {
 
 (function () {
   const context = createCanvas();
+  const canvas = context.canvas;
 
   const img = new Image();
   img.src = "img/ovni.png";
 
   img.onload = function () {
-    let x = 10;
-    let y = 20;
-
-    for (let i = 1; i <= 16; i++) {
-      context.drawImage(img, x, y, 64, 32);
-
-      if (x >= context.canvas.width - 80) {
-        x = 10;
-        y += 70;
-      } else {
-        x += 70;
+    for (let x = 10; x < canvas.width - 10; x += 70) {
+      for (let y = 20; y < canvas.height; y += 70) {
+        context.drawImage(img, x, y, 64, 32);
       }
     }
   };
@@ -92,8 +85,19 @@ function createCanvas() {
   const img = new Image();
   img.src = "img/explosao.png";
 
+  /* img.onload = function () {
+    context.drawImage(img, 80, 0, 70, 70, 80, 80, 140, 140);
+  }; */
+
   img.onload = function () {
-    context.drawImage(img, 80, 10, 60, 65, 95, 90, 120, 130);
+    let x = 0;
+    setInterval(animarExplosao, 150);
+
+    function animarExplosao() {
+      context.clearRect(80, 80, 140, 140);
+      context.drawImage(img, x, 0, 70, 70, 80, 80, 140, 140);
+      x = x > 350 ? 0 : x + 70;
+    }
   };
 })();
 
@@ -113,6 +117,7 @@ function createCanvas() {
 
 (function () {
   const context = createCanvas();
+  const canvas = context.canvas;
 
   let x = 40;
   let y = 150;
@@ -124,8 +129,6 @@ function createCanvas() {
   requestAnimationFrame(mexerBola);
 
   function mexerBola() {
-    const canvas = context.canvas;
-
     context.clearRect(0, 0, canvas.width, canvas.height);
     context.beginPath();
     context.arc(x, y, raio, 0, Math.PI * 2);
