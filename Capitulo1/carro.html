@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Exercícios do capítulo 1</title>
+</head>
+
+<body>
+  <script>
+    "use strict";
+
+    function Carro(cor, velocMaxima) {
+      this.cor = cor;
+      this.velocMaxima = velocMaxima;
+      this.velocAtual = 0;
+    }
+
+    Carro.prototype = {
+      acelerar: function () {
+        this.velocAtual += 10;
+      }
+    };
+
+    const meuCarro = new Carro("vermelho", 250);
+    const oponente = new Carro("azul", 300);
+
+    meuCarro.acelerar();
+    document.write(meuCarro.cor + ": " + meuCarro.velocAtual);
+    document.write("<br>");
+    document.write(oponente.cor + ": " + oponente.velocAtual);
+  </script>
+</body>
+
+</html>

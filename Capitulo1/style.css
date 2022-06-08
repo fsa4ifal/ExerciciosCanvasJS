@@ -1,0 +1,12 @@
+#container {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+canvas {
+  border: 3px solid orange;
+  border-radius: 8px;
+  background-color: white;
+}
