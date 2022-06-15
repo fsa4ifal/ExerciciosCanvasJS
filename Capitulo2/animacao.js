@@ -21,13 +21,13 @@ Animacao.prototype = {
     if (!this.ligado) return;
 
     for (const sprite of this.sprites) {
-      sprite.atualizar();
+      sprite.atualizar(this.context);
     }
 
     this.limparTela();
 
     for (const sprite of this.sprites) {
-      sprite.desenhar();
+      sprite.desenhar(this.context);
     }
 
     const animacao = this;

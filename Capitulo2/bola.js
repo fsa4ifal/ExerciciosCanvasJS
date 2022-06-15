@@ -1,7 +1,6 @@
 "use strict";
 
-function Bola(context) {
-  this.context = context;
+function Bola() {
   this.x = 0;
   this.y = 0;
   this.velocidadeX = 0;
@@ -11,8 +10,8 @@ function Bola(context) {
 }
 
 Bola.prototype = {
-  atualizar: function () {
-    const canvas = this.context.canvas;
+  atualizar: function (context) {
+    const canvas = context.canvas;
 
     if (this.x < this.raio || this.x > canvas.width - this.raio) {
       this.velocidadeX *= -1;
@@ -25,8 +24,7 @@ Bola.prototype = {
     this.x += this.velocidadeX;
     this.y += this.velocidadeY;
   },
-  desenhar: function () {
-    const context = this.context;
+  desenhar: function (context) {
     context.save();
     context.fillStyle = this.cor;
     context.beginPath();

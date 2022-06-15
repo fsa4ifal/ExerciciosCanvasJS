@@ -4,6 +4,8 @@ function Spritesheet(imagem, linhas, colunas) {
   this.imagem = imagem;
   this.numLinhas = linhas;
   this.numColunas = colunas;
+  this.larguraQuadro = this.imagem.width / this.numColunas;
+  this.alturaQuadro = this.imagem.height / this.numLinhas;
   this.intervalo = 0;
   this.linha = 0;
   this.coluna = 0;
@@ -30,12 +32,9 @@ Spritesheet.prototype = {
     this.ultimoTempo = agora;
   },
   desenhar: function (context, x, y) {
-    const larguraQuadro = this.imagem.width / this.numColunas;
-    const alturaQuadro = this.imagem.height / this.numLinhas;
-
     context.drawImage(
-      this.imagem, larguraQuadro * this.coluna, alturaQuadro * this.linha,
-      larguraQuadro, alturaQuadro, x, y, larguraQuadro, alturaQuadro
+      this.imagem, this.larguraQuadro * this.coluna, this.alturaQuadro * this.linha,
+      this.larguraQuadro, this.alturaQuadro, x, y, this.larguraQuadro, this.alturaQuadro
     );
   }
 };

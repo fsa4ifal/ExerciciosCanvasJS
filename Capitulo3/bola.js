@@ -10,7 +10,7 @@ function Bola() {
 }
 
 Bola.prototype = {
-  atualizar: function () {
+  atualizar: function (context) {
     this.x += this.velocidadeX;
     this.y += this.velocidadeY;
   },

@@ -16,27 +16,33 @@ function Sonic(teclado, imagem) {
 }
 
 Sonic.prototype = {
-  atualizar: function () {
+  atualizar: function (context) {
     if (this.teclado.pressionada(SETA_DIREITA)) {
+      this.andando = true;
+      this.direcao = SONIC_DIREITA;
+      this.sheet.proximoQuadro();
+
       if (!this.andando || this.direcao != SONIC_DIREITA) {
         this.sheet.linha = 1;
         this.sheet.coluna = 0;
       }
 
-      this.andando = true;
-      this.direcao = SETA_DIREITA;
-      this.sheet.proximoQuadro();
-      this.x += this.velocidade;
+      if (this.x < context.canvas.width - this.sheet.larguraQuadro) {
+        this.x += this.velocidade;
+      }
     } else if (this.teclado.pressionada(SETA_ESQUERDA)) {
+      this.andando = true;
+      this.direcao = SONIC_ESQUERDA;
+      this.sheet.proximoQuadro();
+
       if (!this.andando || this.direcao != SONIC_ESQUERDA) {
         this.sheet.linha = 2;
         this.sheet.coluna = 0;
       }
 
-      this.andando = true;
-      this.direcao = SETA_ESQUERDA;
-      this.sheet.proximoQuadro();
-      this.x -= this.velocidade;
+      if (this.x > 0) {
+        this.x -= this.velocidade;
+      }
     } else {
       this.andando = false;
       this.sheet.linha = 0;
@@ -49,7 +55,6 @@ Sonic.prototype = {
     }
   },
   desenhar: function (context) {
-    console.log(this.sheet.linha);
     this.sheet.desenhar(context, this.x, this.y);
   }
 };

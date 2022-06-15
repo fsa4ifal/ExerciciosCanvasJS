@@ -5,7 +5,7 @@ const context = canvas.getContext("2d");
 const alternarBtn = document.getElementById("alternarBtn");
 const cores = ["black", "gray", "red", "yellow", "green", "blue", "purple"];
 
-const b1 = new Bola(context);
+const b1 = new Bola();
 b1.x = 100;
 b1.y = 200;
 b1.velocidadeX = 20;
@@ -13,7 +13,7 @@ b1.velocidadeY = -10;
 b1.cor = "red";
 b1.raio = 20;
 
-const b2 = new Bola(context);
+const b2 = new Bola();
 b2.x = 200;
 b2.y = 100;
 b2.velocidadeX = -10;
@@ -37,7 +37,7 @@ alternarBtn.addEventListener("click", function () {
 });
 
 canvas.addEventListener("mousedown", function (e) {
-  const bola = new Bola(context);
+  const bola = new Bola();
   bola.x = e.offsetX;
   bola.y = e.offsetY;
   bola.velocidadeX = getRandomIntegerSign(1, 20);

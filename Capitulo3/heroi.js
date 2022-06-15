@@ -13,7 +13,7 @@ function Heroi(teclado, animacao) {
 }
 
 Heroi.prototype = {
-  atualizar: function () {
+  atualizar: function (context) {
     if (this.teclado.pressionada(SETA_ESQUERDA) && this.x > 0) {
       this.x -= 10;
       this.direcao = DIRECAO_ESQUERDA;

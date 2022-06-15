@@ -8,9 +8,10 @@ const animacao = new Animacao(context);
 const imgSonic = new Image();
 imgSonic.src = "img/spritesheet.png";
 
-const sonic = new Sonic(teclado, imgSonic);
-sonic.x = 0;
-sonic.y = 200;
-animacao.novoSprite(sonic);
-
-imgSonic.onload = () => animacao.ligar();
+imgSonic.onload = function () {
+  const sonic = new Sonic(teclado, imgSonic);
+  sonic.x = 0;
+  sonic.y = 200;
+  animacao.novoSprite(sonic);
+  animacao.ligar();
+}
