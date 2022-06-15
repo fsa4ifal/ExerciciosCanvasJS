@@ -31,9 +31,7 @@ Animacao.prototype = {
     }
 
     const animacao = this;
-    requestAnimationFrame(function () {
-      animacao.proximoFrame();
-    });
+    requestAnimationFrame(() => animacao.proximoFrame());
   },
   limparTela: function () {
     const canvas = this.context.canvas;

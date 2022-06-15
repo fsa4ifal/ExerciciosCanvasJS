@@ -32,23 +32,22 @@ Heroi.prototype = {
     context.fillStyle = "black";
     context.fillRect(this.x, this.y, 20, 50);
 
-    context.fillStyle = "green";
-
+    context.fillStyle = "orange";
     if (this.direcao == DIRECAO_ESQUERDA) {
-      context.fillRect(this.x, this.y + 8, 10, 12);
+      context.fillRect(this.x, this.y, 5, 50);
     } else if (this.direcao == DIRECAO_DIREITA) {
-      context.fillRect(this.x + 10, this.y + 8, 10, 12);
+      context.fillRect(this.x + 15, this.y, 5, 50);
     } else if (this.direcao == DIRECAO_CIMA) {
-      context.fillRect(this.x + 5, this.y + 8, 10, 12);
+      context.fillRect(this.x, this.y, 20, 5);
     } else {
-      context.fillRect(this.x + 5, this.y + 30, 10, 12);
+      context.fillRect(this.x, this.y + 45, 20, 5);
     }
   },
   atirar: function () {
     const tiro = new Bola();
     tiro.x = this.x + 10;
     tiro.y = this.y + 10;
-    tiro.raio = 2;
+    tiro.raio = 8;
     tiro.cor = "red";
 
     if (this.direcao == DIRECAO_ESQUERDA) {

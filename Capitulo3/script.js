@@ -10,8 +10,5 @@ heroi.x = 80;
 heroi.y = 200;
 animacao.novoSprite(heroi);
 
-teclado.disparou(TECLA_ESPACO, function () {
-  heroi.atirar();
-});
-
+teclado.disparou(TECLA_ESPACO, () => heroi.atirar());
 animacao.ligar();

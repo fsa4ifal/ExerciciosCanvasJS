@@ -13,6 +13,4 @@ sonic.x = 0;
 sonic.y = 200;
 animacao.novoSprite(sonic);
 
-imgSonic.onload = function () {
-  animacao.ligar();
-};
+imgSonic.onload = () => animacao.ligar();
