@@ -2,7 +2,7 @@
 const containerElem = document.getElementById("container");
 
 function createCanvas() {
-  const elem = document.createElement("canvas")
+  const elem = document.createElement("canvas");
   elem.width = 300;
   elem.height = 300;
   containerElem.appendChild(elem);

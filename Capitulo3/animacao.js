@@ -27,7 +27,7 @@ Animacao.prototype = {
     this.limparTela();
 
     for (const sprite of this.sprites) {
-      sprite.desenhar();
+      sprite.desenhar(this.context);
     }
 
     const animacao = this;

@@ -34,4 +34,4 @@ Bola.prototype = {
     context.fill();
     context.restore();
   }
-}
+};
