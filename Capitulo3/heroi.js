@@ -46,7 +46,7 @@ Heroi.prototype = {
   atirar: function () {
     const tiro = new Bola();
     tiro.x = this.x + 10;
-    tiro.y = this.y + 10;
+    tiro.y = this.y + 25;
     tiro.raio = 8;
     tiro.cor = "red";
 
