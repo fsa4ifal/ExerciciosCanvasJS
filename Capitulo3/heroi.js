@@ -14,16 +14,18 @@ function Heroi(teclado, animacao) {
 
 Heroi.prototype = {
   atualizar: function (context) {
+    const canvas = context.canvas;
+
     if (this.teclado.pressionada(SETA_ESQUERDA) && this.x > 0) {
       this.x -= 10;
       this.direcao = DIRECAO_ESQUERDA;
-    } else if (this.teclado.pressionada(SETA_DIREITA) && this.x < context.canvas.width - 20) {
+    } else if (this.teclado.pressionada(SETA_DIREITA) && this.x < canvas.width - 20) {
       this.x += 10;
       this.direcao = DIRECAO_DIREITA;
     } else if (this.teclado.pressionada(SETA_CIMA) && this.y > 0) {
       this.y -= 10;
       this.direcao = DIRECAO_CIMA;
-    } else if (this.teclado.pressionada(SETA_BAIXO) && this.y < context.canvas.height - 50) {
+    } else if (this.teclado.pressionada(SETA_BAIXO) && this.y < canvas.height - 50) {
       this.y += 10;
       this.direcao = DIRECAO_BAIXO;
     }

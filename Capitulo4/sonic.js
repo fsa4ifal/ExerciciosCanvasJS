@@ -22,7 +22,7 @@ Sonic.prototype = {
         this.sheet.linha = 1;
         this.sheet.coluna = 0;
       }
-      
+
       this.andando = true;
       this.direcao = SONIC_DIREITA;
       this.sheet.proximoQuadro();
