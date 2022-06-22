@@ -6,7 +6,7 @@ const b1 = new Bola();
 b1.x = 60;
 b1.y = 60;
 b1.velocidadeX = 10;
-b1.velocidadeY = -10;
+b1.velocidadeY = -5;
 b1.cor = "blue";
 b1.raio = 20;
 
