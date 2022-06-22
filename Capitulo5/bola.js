@@ -39,13 +39,13 @@ Bola.prototype = {
   colidiuCom: function (outro) {
     if (this.x < outro.x) {
       this.velocidadeX = -Math.abs(this.velocidadeX);
-    } else {
+    } else if (this.x != outro.x) {
       this.velocidadeX = Math.abs(this.velocidadeX);
     }
 
     if (this.y < outro.y) {
       this.velocidadeY = -Math.abs(this.velocidadeY);
-    } else {
+    } else if (this.y != outro.y) {
       this.velocidadeY = Math.abs(this.velocidadeY);
     }
   }
