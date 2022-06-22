@@ -6,7 +6,7 @@ const teclado = new Teclado(document);
 const animacao = new Animacao(context);
 
 let carregadas = 0;
-let total = 4;
+const total = 4;
 
 const imgEspaco = carregarImagem("img/fundo-espaco.png");
 const imgEstrelas = carregarImagem("img/fundo-estrelas.png");

@@ -32,7 +32,7 @@ Nave.prototype = {
     context.drawImage(this.imagem, this.x, this.y, this.imagem.width, this.imagem.height);
   },
   atirar: function () {
-    var tiro = new Tiro(this);
+    const tiro = new Tiro(this);
     this.animacao.novoSprite(tiro);
   }
 }
